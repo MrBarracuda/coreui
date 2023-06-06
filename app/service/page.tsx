@@ -1,82 +1,107 @@
 "use client"
 import styles from "@/app/page.module.css";
-import {CTable, CTableBody, CTableDataCell, CTableHead, CTableHeaderCell, CTableRow} from "@coreui/react";
+import {CButton, CTable, CTableBody, CTableDataCell, CTableHead, CTableHeaderCell, CTableRow} from "@coreui/react";
+import Actions from "@/components/actions";
+import '@coreui/coreui/dist/css/coreui.min.css'
+
 
 export default function Service() {
+
   const columns = [
     {
-      key: 'id',
-      label: '#',
+      key: 'acc_id',
+      label: 'Acc ID',
+      _props: { scope: 'col' },
+      // _style: { paddingInline: '50px'}
+    },
+    {
+      key: 'customer_name',
+      label: 'Customer Name',
       _props: { scope: 'col' },
     },
     {
-      key: 'class',
+      key: 'business_name',
+      label: 'Business Name',
       _props: { scope: 'col' },
     },
     {
-      key: 'heading_1',
-      label: 'Heading',
+      key: 'equipment_name',
+      label: 'Equipment Name',
       _props: { scope: 'col' },
     },
     {
-      key: 'heading_2',
-      label: 'Heading',
+      key: 'equipment_type',
+      label: 'Equipment Type',
       _props: { scope: 'col' },
+    },
+    {
+      key: 'service_type',
+      label: 'Service Type',
+      _props: { scope: 'col' },
+    },
+    {
+      key: 'next_service',
+      label: 'Next Service',
+      _props: { scope: 'col' },
+    },
+    {
+      key: 'btn_view',
+      _props: { scope: 'col', className: 'hidden' },
     },
   ]
-  const items = [
+
+  type RowItem = {
+    acc_id: number
+    customer_name: string
+    business_name: string
+    equipment_name: string
+    equipment_type: string
+    service_type: string
+    next_service: string
+    btn_view: JSX.Element
+    _cellProps: {id: {scope: string}, next_service: {className: string}}  }
+
+  type RowItems = RowItem[]
+
+  const items: RowItems = [
     {
-      id: 1,
-      class: 'Mark',
-      heading_1: 'Otto',
-      heading_2: '@mdo',
-      _cellProps: { id: { scope: 'row' } },
+      acc_id: 12345,
+      customer_name: 'Ben Chapman',
+      business_name: 'Test Business',
+      equipment_name: 'Fronius',
+      equipment_type: 'Mig',
+      service_type: 'On Site',
+      next_service: '23 June 2023',
+      btn_view: <CButton color='success' size='sm'>View</CButton>,
+      _cellProps: { id: { scope: 'row'}, next_service: {className: 'green-cell'} },
     },
     {
-      id: 2,
-      class: 'Jacob',
-      heading_1: 'Thornton',
-      heading_2: '@fat',
-      _cellProps: { id: { scope: 'row' } },
+      acc_id: 12346,
+      customer_name: 'Ben Chapman',
+      business_name: 'Test Business',
+      equipment_name: 'Fronius',
+      equipment_type: 'Mig',
+      service_type: 'Workshop',
+      next_service: '23 June 2023',
+      btn_view: <CButton color='success' size='sm'>View</CButton>,
+      _cellProps: { id: { scope: 'row'}, next_service: {className: 'green-cell'} },
     },
     {
-      id: 3,
-      class: 'Larry the Bird',
-      heading_2: '@twitter',
-      _cellProps: { id: { scope: 'row' }, class: { colSpan: 2 } },
+      acc_id: 12347,
+      customer_name: 'Steve Tiglerton',
+      business_name: 'Test Business',
+      equipment_name: 'Fronius',
+      equipment_type: 'Mig',
+      service_type: 'Workshop',
+      next_service: '23 June 2023',
+      btn_view: <CButton color='success' size='sm'>View</CButton>,
+      _cellProps: { id: { scope: 'row'}, next_service: {className: 'green-cell'} },
     },
   ]
   return (
     <main className={styles.main}>
-      <CTable border>
-        <CTableHead>
-          <CTableRow>
-            <CTableHeaderCell scope="col">#</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Class</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-            <CTableHeaderCell scope="col">Heading</CTableHeaderCell>
-          </CTableRow>
-        </CTableHead>
-        <CTableBody>
-          <CTableRow>
-            <CTableHeaderCell scope="row">1</CTableHeaderCell>
-            <CTableDataCell>Mark</CTableDataCell>
-            <CTableDataCell>Otto</CTableDataCell>
-            <CTableDataCell>@mdo</CTableDataCell>
-          </CTableRow>
-          <CTableRow>
-            <CTableHeaderCell scope="row">2</CTableHeaderCell>
-            <CTableDataCell>Jacob</CTableDataCell>
-            <CTableDataCell>Thornton</CTableDataCell>
-            <CTableDataCell>@fat</CTableDataCell>
-          </CTableRow>
-          <CTableRow>
-            <CTableHeaderCell scope="row">3</CTableHeaderCell>
-            <CTableDataCell colSpan={2}>Larry the Bird</CTableDataCell>
-            <CTableDataCell>@twitter</CTableDataCell>
-          </CTableRow>
-        </CTableBody>
-      </CTable>
+      <Actions />
+      <CTable  striped style={{fontSize: '14px'}} responsive columns={columns} items={items} />
     </main>
   );
 }

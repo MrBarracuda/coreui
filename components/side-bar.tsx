@@ -6,7 +6,7 @@ import CIcon from '@coreui/icons-react'
 
 
 import SimpleBar from 'simplebar-react'
-import {AppSidebarNav} from "@/components/AppSidebarNav";
+// import {AppSidebarNav} from "@/components/AppSidebarNav";
 // import 'simplebar/dist/simplebar.min.css'
 
 // sidebar nav config

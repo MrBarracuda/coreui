@@ -1,11 +1,29 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   align-items: center;
-  padding: 6rem;
+  /*padding: 6rem;*/
   min-height: 100vh;
+  margin: auto;
+  padding: 20px;
+  max-width: 1024px;
+  background: white !important;
 }
+.actions {
+  width: 100%;
+  margin-bottom: 15px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+}
+.searchWrapper {
+  max-height: 31px;
+}
+
+
 
 /*.description {*/
 /*  display: inherit;*/
