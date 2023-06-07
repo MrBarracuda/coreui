@@ -1,18 +1,16 @@
 "use client"
 import styles from "@/app/page.module.css";
-import {CButton, CTable, CTableBody, CTableDataCell, CTableHead, CTableHeaderCell, CTableRow} from "@coreui/react";
+import {CButton, CContainer, CTable} from "@coreui/react";
 import Actions from "@/components/actions";
 import '@coreui/coreui/dist/css/coreui.min.css'
 
 
 export default function Service() {
-
   const columns = [
     {
       key: 'acc_id',
       label: 'Acc ID',
       _props: { scope: 'col' },
-      // _style: { paddingInline: '50px'}
     },
     {
       key: 'customer_name',
@@ -99,9 +97,10 @@ export default function Service() {
     },
   ]
   return (
-    <main className={styles.main}>
+    <CContainer style={{padding: '10px'}}>
+      <h3 className="mb-4">Service and Repair</h3>
       <Actions />
       <CTable  striped style={{fontSize: '14px'}} responsive columns={columns} items={items} />
-    </main>
+    </CContainer>
   );
 }

@@ -103,6 +103,8 @@ a {
 button {
   color: white !important;
   padding-inline: 30px !important;
+  padding-block: 6px !important;
+  /*word-break: break-all !important;*/
 }
 
 .green-cell {

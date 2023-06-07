@@ -4,20 +4,22 @@
   /*justify-content: space-between;*/
   align-items: center;
   /*padding: 6rem;*/
-  min-height: 100vh;
+  min-height: 60vh;
   margin: auto;
-  padding: 20px;
+  padding: 10px;
   max-width: 1024px;
   background: white !important;
+
 }
 .actions {
   width: 100%;
   margin-bottom: 15px;
-  padding-top: 20px;
+  padding-block: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: 1px solid gray;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 .searchWrapper {
   max-height: 31px;
