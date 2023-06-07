@@ -1,9 +1,8 @@
 "use client"
-import styles from "@/app/page.module.css";
 import {CButton, CContainer, CTable} from "@coreui/react";
 import Actions from "@/components/actions";
 import '@coreui/coreui/dist/css/coreui.min.css'
-
+import Sidebar from "@/components/sidebar";
 
 export default function Service() {
   const columns = [
@@ -97,7 +96,7 @@ export default function Service() {
     },
   ]
   return (
-    <CContainer style={{padding: '10px'}}>
+    <CContainer className="p-4 bg-white" style={{minHeight: '80vh', marginLeft: '90px'}}>
       <h3 className="mb-4">Service and Repair</h3>
       <Actions />
       <CTable striped style={{fontSize: '14px'}} responsive columns={columns} items={items} />

@@ -15,7 +15,7 @@ import {
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
-const _nav = [
+const nav = [
   {
     component: CNavItem,
     name: 'Dashboard',
@@ -300,6 +300,6 @@ const _nav = [
     href: 'https://coreui.io/react/docs/templates/installation/',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
   },
-]
+] as const
 
-export default _nav
+export default nav

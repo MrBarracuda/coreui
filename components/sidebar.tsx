@@ -1,24 +1,20 @@
-"use client"
 import { useSelector, useDispatch } from 'react-redux'
 
 import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-
 import SimpleBar from 'simplebar-react'
-// import {AppSidebarNav} from "@/components/AppSidebarNav";
-// import 'simplebar/dist/simplebar.min.css'
+import '@coreui/coreui/dist/css/coreui.min.css'
 
-// sidebar nav config
-import navigation from '@/config/_nav'
-import Link from "next/link";
+import nav from '../config/nav'
+import {logoNegative} from "@/assets/brand/logo-negative";
+import {sygnet} from "@/assets/brand/sygnet";
+import SidebarNav from "@/components/sidebar-nav";
 
-const SideBar = () => {
+const Sidebar = () => {
   const dispatch = useDispatch()
-  // @ts-ignore
-  const unfoldable = useSelector((state) => state.sidebarUnfoldable)
-  // @ts-ignore
-  const sidebarShow = useSelector((state) => state.sidebarShow)
+  const unfoldable = useSelector((state: any) => state.sidebarUnfoldable)
+  const sidebarShow = useSelector((state: any) => state.sidebarShow)
 
   return (
     <CSidebar
@@ -30,14 +26,12 @@ const SideBar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex">
-        <CIcon className="sidebar-brand-full" icon={'logoNegative'} height={35} />
-        <CIcon className="sidebar-brand-narrow" icon={'sygnet'} height={35} />
+        <CIcon className="sidebar-brand-full" icon={logoNegative} height={35} />
+        <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>
-          <Link href='/' >Dashboard</Link>
-          <Link href='/service' >service</Link>
-          {/*<AppSidebarNav items={navigation} />*/}
+          {/*<SidebarNav items={nav} />*/}
         </SimpleBar>
       </CSidebarNav>
       <CSidebarToggler
@@ -48,4 +42,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default Sidebar

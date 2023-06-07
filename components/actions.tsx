@@ -12,13 +12,13 @@ export default function Actions() {
         <CButton size="sm" style={{fontSize: '12px'}} color="secondary">Status</CButton>
       </div>
 
-      <div style={{display: 'inline-flex'}}>
+      <div className="d-inline-flex">
         <CButton size="sm" style={{marginRight: '10px', fontSize: '12px'}} color="success">
           Book a Service
         </CButton>
         <div>
-          <div style={{position: 'relative'}}>
-            <CIcon icon={cilSearch} style={{position: 'absolute', top: '6px', left: '8px'}} />
+          <div className="position-relative">
+            <CIcon icon={cilSearch} className="position-absolute" style={{top: '6px', left: '8px'}} />
             <CFormInput size="sm" placeholder="Search Service" style={{paddingLeft: '35px'}} />
           </div>
         </div>
