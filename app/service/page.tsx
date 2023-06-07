@@ -100,7 +100,7 @@ export default function Service() {
     <CContainer style={{padding: '10px'}}>
       <h3 className="mb-4">Service and Repair</h3>
       <Actions />
-      <CTable  striped style={{fontSize: '14px'}} responsive columns={columns} items={items} />
+      <CTable striped style={{fontSize: '14px'}} responsive columns={columns} items={items} />
     </CContainer>
   );
 }

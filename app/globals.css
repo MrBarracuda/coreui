@@ -113,21 +113,9 @@ button {
 .hidden {
   visibility: hidden !important;
 }
-/*table {*/
-/*  border-collapse:collapse;*/
-/*  border-top: 1px solid black;*/
-/*}*/
-
-/*td {*/
-/*  padding: 10px 50px;*/
-/*  border-bottom: 1px solid black;*/
-/*}*/
-
-/*th {*/
-/*  padding-block: 10px;*/
-/*  border-bottom: 1px solid black;*/
-/*}*/
-
+table {
+  vertical-align: baseline !important;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
