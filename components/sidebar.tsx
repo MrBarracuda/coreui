@@ -1,15 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux'
 
-import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
+import {CNavLink, CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler} from '@coreui/react'
 
 import SimpleBar from 'simplebar-react'
 import '@coreui/coreui/dist/css/coreui.min.css'
 
-import nav from '../config/nav'
-import {logoNegative} from "@/assets/brand/logo-negative";
-import {sygnet} from "@/assets/brand/sygnet";
-import SidebarNav from "@/components/sidebar-nav";
+import Link from "next/link";
 
 const Sidebar = () => {
   const dispatch = useDispatch()
@@ -25,19 +21,22 @@ const Sidebar = () => {
         dispatch({ type: 'set', sidebarShow: visible })
       }}
     >
-      <CSidebarBrand className="d-none d-md-flex">
-        <CIcon className="sidebar-brand-full" icon={logoNegative} height={35} />
-        <CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />
-      </CSidebarBrand>
+      <CSidebarBrand className="d-none d-md-flex" />
       <CSidebarNav>
         <SimpleBar>
+          <Link legacyBehavior href='/' className='text-decoration-none'>
+            <CNavLink style={{cursor: 'pointer'}}>
+              Dashboard
+            </CNavLink>
+          </Link>
+            <Link legacyBehavior href='/service' className='pointer-event text-decoration-none'>
+              <CNavLink style={{cursor: 'pointer', visibility: unfoldable ? 'hidden' : 'visible'}}>
+              Service
+              </CNavLink>
+            </Link>
           {/*<SidebarNav items={nav} />*/}
         </SimpleBar>
       </CSidebarNav>
-      <CSidebarToggler
-        className="d-none d-lg-flex"
-        onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
-      />
     </CSidebar>
   )
 }

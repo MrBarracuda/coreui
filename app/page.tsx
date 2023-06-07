@@ -6,7 +6,7 @@ import {CContainer} from "@coreui/react";
 export default function Home() {
   return (
    <CContainer>
-     hello
+     home page
    </CContainer>
   )
 }
