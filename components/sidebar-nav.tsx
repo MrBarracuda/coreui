@@ -1,10 +1,10 @@
 import { CBadge } from '@coreui/react'
-import Link from "next/link";
-import nav from "@/config/nav";
-import {usePathname} from "next/navigation";
+import Link from 'next/link'
+import nav from '@/config/nav'
+import { usePathname } from 'next/navigation'
 
-const SidebarNav = ({ items }: {items: typeof nav}) => {
-  console.log(items);
+const SidebarNav = ({ items }: { items: typeof nav }) => {
+  console.log(items)
   const pathname = usePathname()
   const navLink = (name: string, icon: any, badge: any) => {
     return (
@@ -54,11 +54,7 @@ const SidebarNav = ({ items }: {items: typeof nav}) => {
     )
   }
 
-  return (
-    <>
-      {items?.map((item, index) => (item ? navGroup(item, index) : navItem(item, index)))}
-    </>
-  )
+  return <>{items?.map((item, index) => (item ? navGroup(item, index) : navItem(item, index)))}</>
 }
 
 export default SidebarNav

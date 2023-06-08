@@ -1,12 +1,7 @@
-"use client"
+'use client'
 import '@coreui/coreui/dist/css/coreui.min.css'
-import {CContainer} from "@coreui/react";
-
+import { CContainer } from '@coreui/react'
 
 export default function Home() {
-  return (
-   <CContainer>
-     home page
-   </CContainer>
-  )
+  return <CContainer>home page</CContainer>
 }

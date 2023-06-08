@@ -1,4 +1,4 @@
-import {CButton} from "@coreui/react";
+import { CButton } from '@coreui/react'
 
 type RowItem = {
   acc_id: number
@@ -9,7 +9,8 @@ type RowItem = {
   service_type: string
   next_service: string
   btn_view: JSX.Element
-  _cellProps: {id: {scope: string}, next_service: {className: string}}  }
+  _cellProps: { id: { scope: string }; next_service: { className: string } }
+}
 
 type RowItems = RowItem[]
 
@@ -22,8 +23,12 @@ const items: RowItems = [
     equipment_type: 'Mig',
     service_type: 'On Site',
     next_service: '23 June 2023',
-    btn_view: <CButton color='success' size='sm'>View</CButton>,
-    _cellProps: { id: { scope: 'row'}, next_service: {className: 'green-cell'} },
+    btn_view: (
+      <CButton color="success" size="sm">
+        View
+      </CButton>
+    ),
+    _cellProps: { id: { scope: 'row' }, next_service: { className: 'green-cell' } },
   },
   {
     acc_id: 12346,
@@ -33,8 +38,12 @@ const items: RowItems = [
     equipment_type: 'Mig',
     service_type: 'Workshop',
     next_service: '23 June 2023',
-    btn_view: <CButton color='success' size='sm'>View</CButton>,
-    _cellProps: { id: { scope: 'row'}, next_service: {className: 'green-cell'} },
+    btn_view: (
+      <CButton color="success" size="sm">
+        View
+      </CButton>
+    ),
+    _cellProps: { id: { scope: 'row' }, next_service: { className: 'green-cell' } },
   },
   {
     acc_id: 12347,
@@ -44,8 +53,12 @@ const items: RowItems = [
     equipment_type: 'Mig',
     service_type: 'Workshop',
     next_service: '23 June 2023',
-    btn_view: <CButton color='success' size='sm'>View</CButton>,
-    _cellProps: { id: { scope: 'row'}, next_service: {className: 'green-cell'} },
+    btn_view: (
+      <CButton color="success" size="sm">
+        View
+      </CButton>
+    ),
+    _cellProps: { id: { scope: 'row' }, next_service: { className: 'green-cell' } },
   },
 ]
 

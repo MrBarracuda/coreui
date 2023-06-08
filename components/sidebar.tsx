@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux'
 
-import {CNavLink, CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler} from '@coreui/react'
+import { CNavLink, CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
 
 import SimpleBar from 'simplebar-react'
 import '@coreui/coreui/dist/css/coreui.min.css'
 
-import Link from "next/link";
+import Link from 'next/link'
 
 const Sidebar = () => {
   const dispatch = useDispatch()
@@ -24,16 +24,14 @@ const Sidebar = () => {
       <CSidebarBrand className="d-none d-md-flex" />
       <CSidebarNav>
         <SimpleBar>
-          <Link legacyBehavior href='/' className='text-decoration-none'>
-            <CNavLink style={{cursor: 'pointer'}}>
-              Dashboard
+          <Link legacyBehavior href="/" className="text-decoration-none">
+            <CNavLink style={{ cursor: 'pointer' }}>Dashboard</CNavLink>
+          </Link>
+          <Link legacyBehavior href="/service" className="pointer-event text-decoration-none">
+            <CNavLink style={{ cursor: 'pointer', visibility: unfoldable ? 'hidden' : 'visible' }}>
+              Service
             </CNavLink>
           </Link>
-            <Link legacyBehavior href='/service' className='pointer-event text-decoration-none'>
-              <CNavLink style={{cursor: 'pointer', visibility: unfoldable ? 'hidden' : 'visible'}}>
-              Service
-              </CNavLink>
-            </Link>
           {/*<SidebarNav items={nav} />*/}
         </SimpleBar>
       </CSidebarNav>
