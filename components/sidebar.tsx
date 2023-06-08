@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux'
 
-import { CNavLink, CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
+import { CNavGroup, CNavItem, CNavLink, CSidebar, CSidebarBrand, CSidebarNav } from '@coreui/react'
 
 import SimpleBar from 'simplebar-react'
 import '@coreui/coreui/dist/css/coreui.min.css'
@@ -32,7 +32,19 @@ const Sidebar = () => {
               Service
             </CNavLink>
           </Link>
-          {/*<SidebarNav items={nav} />*/}
+          <CNavGroup toggler="Orders">
+            <CNavItem href="/orders/all">All Orders</CNavItem>
+          </CNavGroup>
+
+          <CNavGroup toggler="Products">
+            <CNavItem href="/products">Products</CNavItem>
+          </CNavGroup>
+
+          <CNavGroup toggler="Customers">
+            <CNavItem href="/customers">Customers</CNavItem>
+          </CNavGroup>
+
+          <CNavItem href="/admin">Admin</CNavItem>
         </SimpleBar>
       </CSidebarNav>
     </CSidebar>

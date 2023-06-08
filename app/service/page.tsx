@@ -1,10 +1,10 @@
 'use client'
-import { CContainer, CTable } from '@coreui/react'
+import { CContainer } from '@coreui/react'
 import Actions from '@/components/actions'
 import '@coreui/coreui/dist/css/coreui.min.css'
-import items from '@/config/table_items'
-import columns from '@/config/columns'
 import { useSelector } from 'react-redux'
+import Table from '@/components/table/table'
+import { columns, rows } from '@/config/table_cells'
 
 export default function Service() {
   const sidebarShow = useSelector((state: any) => state.sidebarShow)
@@ -20,7 +20,7 @@ export default function Service() {
     >
       <h3 className="mb-4">Service and Repair</h3>
       <Actions />
-      <CTable striped style={{ fontSize: '14px' }} responsive columns={columns} items={items} />
+      <Table columns={columns} rows={rows} />
     </CContainer>
   )
 }
