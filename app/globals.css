@@ -109,6 +109,22 @@ button {
 table {
   vertical-align: baseline !important;
 }
+p {
+  font-size: 14px;
+  color: #5e5e5e;
+}
+
+.divider {
+  border-bottom: 1px solid lightgray;
+}
+.pb-25 {
+  padding-bottom: 25px;
+}
+
+.pt-25 {
+  padding-top: 25px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
